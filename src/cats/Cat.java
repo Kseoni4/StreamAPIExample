@@ -1,9 +1,15 @@
+package cats;
+
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Cat {
 
     //возраст
     private int age;
+
+    //Дата рождения
+    private final LocalDate birthDate;
 
     //имя
     private String name;
@@ -72,8 +78,13 @@ public class Cat {
         this.tall = tall;
     }
 
-    public Cat(int age, String name, String breed, String color, int weight, int tall) {
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public Cat(int age, LocalDate birthDate, String name, String breed, String color, int weight, int tall) {
         this.age = age;
+        this.birthDate = birthDate;
         this.name = name;
         this.breed = breed;
         this.color = color;
@@ -100,13 +111,15 @@ public class Cat {
         return new String()
                 .concat(getName())
                 .concat("\n")
+                .concat("Дата рождения: ").concat(getBirthDate().toString())
+                .concat("\n")
                 .concat("Возраст: ").concat(""+getAge())
                 .concat("\n")
                 .concat("Порода: ").concat(getBreed())
                 .concat("\n")
                 .concat("Окрас: ").concat(getColor())
                 .concat("\n")
-                .concat("ID веткнижки: ").concat(""+vetBook.getVID())
+                .concat(""+vetBook.toString())
                 .concat("\n---------------------------\n");
     }
 
@@ -121,8 +134,4 @@ public class Cat {
         return vetBook;
     }
 
-    /*    private Optional<VetBook> vetBook = Optional.empty();
-    public Optional<VetBook> getVetBook() {
-        return vetBook;
-    }*/
 }

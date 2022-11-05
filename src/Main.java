@@ -1,21 +1,64 @@
-import java.util.ArrayList;
-import java.util.Optional;
+import cats.CatListGenerator;
 
 public class Main {
     public static void main(String[] args) {
-        CatListGenerator catListGenerator = new CatListGenerator();
 
-        ArrayList<Cat> cats = (ArrayList<Cat>) catListGenerator.randomCats(100);
+        new CatListGenerator().randomCats(1000).stream().forEach(System.out::println);
 
-        Optional<Cat> shlepa = cats.stream().filter(cat -> cat.getName().equals("Шлёпа")).findFirst();
+        /* Задачи с котиками */
 
-        shlepa.ifPresent(cat -> System.out.println(cat));
+        //TODO вывести всех котов с определённым окрасом
 
-        System.out.println(cats.stream().filter(cat -> cat.getTall() >35).count());
-        /*
-            SELECT count(cats.name)
-            FROM cats
-            WHERE height > 3
-         */
+        //TODO найти кота с конкретным именем и возрастом
+
+        //TODO найти одного кота с датой вакицинации за семь дней до текущей
+
+        //TODO вывести всех котов, у которых день рождения в определённую дату
+
+        //TODO сгруппировать котов по датам рождения
+
+        //TODO сгруппировать котов по породе\окрасу\возрасту
+
+        //TODO всем котам установить новый случайный окрас
+
+        //TODO получить список веткнижек котов
+
+        //TODO подсчитать сколько котов с указанным именем
+
+        //TODO удалить котов определёной породы
+
+        //TODO удалять из потока данных котов, пока не будет достигнут кот с определёнными условиями
+
+        //TODO подсчитать сколько котов родилось в период между двумя датами
+
+        //TODO вывести котов рождённых в период между двумя датами
+
+        //TODO подсчитать средний возраст котов
+
+        //TODO подсчитать средний вес котов
+
+        //TODO найти самого взрослого\маленького котика
+
+        //TODO найти котика, который родился в ближайшую от сегодняшней дату
+
+        //TODO найти котика, который родился ровно год назад
+
+        //TODO всем котам обновить дату вакцинации
+
+        /* задачи с шаурмой */
+
+        //TODO найти самую дорогую шаурму
+
+        //TODO найти самую дешёвую шаурму
+
+        //TODO вычислить среднюю цену шаурмы
+
+        //TODO найти шаурму, у которой самый долгий срок годности
+
+        //TODO сгруппировать шаурму по её типу
+
+        //TODO найти самый популярный вкус
+
+        //TODO снизить цену всех шаурм на 10%
     }
 }
