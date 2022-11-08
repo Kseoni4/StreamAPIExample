@@ -1,9 +1,5 @@
-import cats.CatListGenerator;
-
 public class Main {
     public static void main(String[] args) {
-
-        new CatListGenerator().randomCats(1000).stream().forEach(System.out::println);
 
         /* Задачи с котиками */
 

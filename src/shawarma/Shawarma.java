@@ -36,7 +36,19 @@ public class Shawarma {
     public Shawarma(String shawarmaType, LocalTime madeTime, int price) {
         this.shawarmaType = shawarmaType;
         this.madeTime = madeTime;
-        this.expiredTime = madeTime.plusHours(ThreadLocalRandom.current().nextInt(2,6));
+        this.expiredTime = madeTime.plusHours(ThreadLocalRandom.current().nextInt(2,12));
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Шаурма ".concat(shawarmaType)
+                .concat("\n")
+                .concat("Время изготовления: ").concat(madeTime.toString())
+                .concat("\n")
+                .concat("Срок годности до: ").concat(expiredTime.toString())
+                .concat("\n")
+                .concat("Цена: ").concat(""+price)
+                .concat("\n---------------------------\n");
     }
 }
